@@ -47,10 +47,10 @@ export const updateProduct = (req, res) => {
 };
 
 export const deleteProduct = (req, res) => {
-  Product.remove({ _id: req.params.ProductID }, (err, Product) => {
+  Product.deleteOne({ _id: req.params.ProductID }, (err, Product) => {
     if (err) {
       res.send(err);
     }
-    res.json({ message: 'Successfully deleted Product' });
+    res.json({ message: 'successfully deleted product' });
   });
 };
